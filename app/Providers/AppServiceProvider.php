@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\URL; // Hada khassu ikun hna l-fouq
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,7 +20,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if (app()->environment('production') || true) { // zid || true ghir bch t-force-iha daba
+        // Hada huwa l-hal l-asasi bch l-CSS ikhdem f Railway
+        if (app()->environment('production')) {
             URL::forceScheme('https');
         }
     }
