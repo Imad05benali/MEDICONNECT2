@@ -1,0 +1,11 @@
+{
+    "version": 2,
+    "outputDirectory": "public",
+    "framework": "vite",
+    "rewrites": [
+      {
+        "source": "/(.*)",
+        "destination": "/index.php"
+      }
+    ]
+  }
