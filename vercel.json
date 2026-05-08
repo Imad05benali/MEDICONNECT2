@@ -1,11 +1,18 @@
 {
     "version": 2,
-    "outputDirectory": "public",
-    "framework": "vite",
-    "rewrites": [
+    "functions": {
+      "api/index.php": {
+        "runtime": "vercel-php@0.7.5"
+      }
+    },
+    "routes": [
       {
-        "source": "/(.*)",
-        "destination": "/index.php"
+        "src": "/(css|js|images|build)/(.*)",
+        "dest": "/public/$1/$2"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/api/index.php"
       }
     ]
   }
