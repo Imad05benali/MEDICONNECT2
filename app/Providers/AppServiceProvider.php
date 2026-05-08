@@ -19,6 +19,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        if (app()->environment('production') || true) { // zid || true ghir bch t-force-iha daba
+            URL::forceScheme('https');
+        }
     }
 }
